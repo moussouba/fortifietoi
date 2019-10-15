@@ -1,922 +1,231 @@
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-127577581-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-127577581-1');
-    </script>
-
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <link rel="icon" type="image/png" href="https://fortifietoi.ci/images/favicon.png">
-  <meta name="csrf-token" content="VaF5gohXgLnAonixeuZk69RUzW1OKGoGicwIWjBc">
-  <meta name="keywords" content="">
-  <title>Fortifie-toi ::     Utilisateur | Annonces
- </title>
-  <!-- Bootstrap core CSS -->
-  <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script> -->
-  <link media="all" type="text/css" rel="stylesheet" href="https://fortifietoi.ci/assets/core/bootstrap/dist/css/bootstrap.min.css">
-
-  <link media="all" type="text/css" rel="stylesheet" href="https://fortifietoi.ci/assets/core/open-iconic/font/css/open-iconic-bootstrap.css">
-
-  <link media="all" type="text/css" rel="stylesheet" href="https://fortifietoi.ci/assets/core/fontawesome/css/all.css">
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css">
-  <link media="all" type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css">
-
-  <link media="all" type="text/css" rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
-
-  <!-- <link media="all" type="text/css" rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap-theme.min.css">
- -->
-  <link media="all" type="text/css" rel="stylesheet" href="https://fortifietoi.ci/assets/core/OwlCarousel/dist/assets/owl.carousel.min.css">
-
-  <link media="all" type="text/css" rel="stylesheet" href="https://fortifietoi.ci/assets/core/OwlCarousel/dist/assets/owl.theme.default.min.css">
-
-
-<!-- <link rel="stylesheet" href="https://fortifietoi.ci/css/dropzone.css">
-  <link rel="stylesheet" href="https://fortifietoi.ci/css/custom.css"> -->
-
-  <link media="all" type="text/css" rel="stylesheet" href="https://fortifietoi.ci/assets/core/plugins/dropify/dist/css/dropify.min.css">
-
-
-  <script src="https://fortifietoi.ci/assets/core/chosen/chosen.jquery.js"></script>
-
-  <script type="text/javascript">
-      $(document).ready(function () {
-          $('.chosen-select').chosen();
-      });
-  </script>
-
-
-  <style>
-    /** cacher les boutons radio des denonciations */
-    .displayForDenoncer{
-        display:none;
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/bootstrap.css">
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<style type="text/css">
+   
+  .table-wrapper {
+        background: #fff;
+        padding: 20px;
+        margin: 30px 0;
+        box-shadow: 0 1px 1px rgba(0,0,0,.05);
     }
-    /** code pour la classe de la denonciation selectionnée */
-    .surbrillance{
-      -moz-box-shadow:3px 3px 3px 3px #0b97c4;
-      -o-box-shadow: 3px 3px 3px 3px #0b97c4;
-      -webkit-box-shadow: 3px 3px 3px 3px #0b97c4;
+  .table-title {
+        padding-bottom: 10px;
+        margin: 0 0 10px;
     }
-    /** modification d'annonces **/
-    .input0,.input1,.input2,.input3,.input4{
-      display: none;
+    .table-title h2 {
+        margin: 8px 0 0;
+        font-size: 22px;
     }
-    /** afficher les regions et les communes en dropdown */
-    .dropdown-accordion .panel-heading {
-    padding: 0;
+    .search-box {
+        position: relative;        
+        float: right;
     }
-    .dropdown-accordion .panel-heading a {
-    display: block;
-    padding: 10px 15px;
+    .search-box input {
+        height: 34px;
+        border-radius: 20px;
+        padding-left: 35px;
+        border-color: #ddd;
+        box-shadow: none;
     }
-
-    /* The container */
-    .container2 {
-      display: block;
-      position: relative;
-      padding-left: 35px;
-      /*margin-bottom: 12px;*/
-      cursor: pointer;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
+  .search-box input:focus {
+    border-color: #3FBAE4;
+  }
+    .search-box i {
+        color: #a0a5b1;
+        position: absolute;
+        font-size: 19px;
+        top: 8px;
+        left: 10px;
     }
-
-    .container2 input {
-      position: absolute;
-      opacity: 0;
-      cursor: pointer;
+    table.table tr th, table.table tr td {
+        border-color: #e9e9e9;
     }
-
-    .checkmark {
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 25px;
-      width: 25px;
-      background-color: #eee;
-      border-radius: 50%;
+    table.table-striped tbody tr:nth-of-type(odd) {
+      background-color: #fcfcfc;
+  }
+  table.table-striped.table-hover tbody tr:hover {
+    background: #f5f5f5;
+  }
+    table.table th i {
+        font-size: 13px;
+        margin: 0 5px;
+        cursor: pointer;
     }
-
-
-    /* On mouse-over, add a grey background color */
-    .container2:hover input ~ .checkmark {
-      background-color: #ccc;
+    table.table td:last-child {
+        width: 130px;
     }
-
-    /* When the radio button is checked, add a blue background */
-    .container2 input:checked ~ .checkmark {
-      background-color: #2196F3;
+    table.table td a {
+        color: #a0a5b1;
+        display: inline-block;
+        margin: 0 5px;
     }
-
-    /* Create the indicator (the dot/circle - hidden when not checked) */
-    .checkmark:after {
-      content: "";
-      position: absolute;
-      display: none;
+  table.table td a.view {
+        color: #03A9F4;
     }
-
-    /* Show the indicator (dot/circle) when checked */
-    .container2 input:checked ~ .checkmark:after {
-      display: block;
+    table.table td a.edit {
+        color: #FFC107;
     }
-
-    /* Style the indicator (dot/circle) */
-    .container2 .checkmark:after {
-      top: 9px;
-      left: 9px;
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: white;
+    table.table td a.delete {
+        color: #E34724;
     }
-
-    /** scroll to top page **/
-    #myBtn {
-      display: none;
-      position: fixed;
-      bottom: 20px;
-      right: 30px;
-      z-index: 99;
-      font-size: 18px;
-      border: none;
-      outline: none;
-      background-color: #007bff;
-      color: white;
-      cursor: pointer;
-      padding: 8px;
-      width: 45px;
-      height: 45px;
-      border-radius: 4px;
+    table.table td i {
+        font-size: 19px;
+    }    
+    .pagination {
+        float: right;
+        margin: 0 0 5px;
     }
-
-    #myBtn:hover {
-      background-color: #6b2f90;
+    .pagination li a {
+        border: none;
+        font-size: 95%;
+        width: 30px;
+        height: 30px;
+        color: #999;
+        margin: 0 2px;
+        line-height: 30px;
+        border-radius: 30px !important;
+        text-align: center;
+        padding: 0;
     }
-
-  </style>
+    .pagination li a:hover {
+        color: #666;
+    } 
+    .pagination li.active a {
+        background: #03A9F4;
+    }
+    .pagination li.active a:hover {        
+        background: #0397d6;
+    }
+  .pagination li.disabled i {
+        color: #ccc;
+    }
+    .pagination li i {
+        font-size: 16px;
+        padding-top: 6px
+    }
+    .hint-text {
+        float: left;
+        margin-top: 6px;
+        font-size: 95%;
+    }    
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip();
+});
+</script>
 </head>
 <body>
-
-<header>
-  <div style="background-color:#6b2f90;padding: 10px 0px;" class="navbar">
-    <div class="container d-flex justify-content-between">
-      <div class="col-lg-4 col-sm-12">
-        <a href="https://fortifietoi.ci">
-          <img style="height:65px;" src="https://fortifietoi.ci/logo.png" alt="Fortifie-toi">
-        </a>
-      </div>
-      <div style="padding-right: 0px;" class="col-lg-8 col-sm-12">
-        <!-- Right Side Of Navbar -->
-        <ul class="nav float-right">
-          <!-- Authentication Links -->
-                      <li style="margin-top:7px;" class="dropdown">
-              <a style="color:#fff;" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" id="dropdownMenuButton"  aria-haspopup="true" aria-expanded="false">
-                <span class="oi oi-person"></span><span class="caret"></span>
-              </a>
-              <ul class="dropdown-menu" role="menu">
-                <li class="dropdown-item"><a href="https://fortifietoi.ci/utilisateur/annonces">Mes annonces </a></li>
-                <li class="dropdown-item"><a href="https://fortifietoi.ci/utilisateur">Mon profil </a></li>
-                <li class="dropdown-divider"></li>
-                <li class="dropdown-item">
-                  <a href="https://fortifietoi.ci/deconnexion"
-                     onclick="event.preventDefault();
-                     document.getElementById('logout-form').submit();">
-                    Déconnexion
-                  </a>
-                  <form id="logout-form" action="https://fortifietoi.ci/deconnexion" method="POST" style="display: none;">
-                    <input type="hidden" name="_token" value="VaF5gohXgLnAonixeuZk69RUzW1OKGoGicwIWjBc">
-                  </form>
-                </li>
-              </ul>
-            </li>
-                   <li style="padding-left:5px;maring-top:-25px;"><a style="color:#fff;" href="https://fortifietoi.ci/publier" class="btn btn-primary"> Publier</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</header>
-
-<main role="main">
-  <div class="container">
-    <button onclick="topFunction()" id="myBtn" title="Vers le haut">
-    <i class="fa fa-arrow-up"></i>
-    </button>
-  </div>
-      <section style="padding:20px;" class="jumbotron">
-        <div class="container">
-            <form class="form-inline" action="https://fortifietoi.ci/search" method="post">
-                <input type="hidden" name="_token" value="VaF5gohXgLnAonixeuZk69RUzW1OKGoGicwIWjBc">
-                <input type="text" name="query_text" class="form-control col-sm-12 col-md-5" placeholder="Recherche">
-                <div class="dropdown">
-                  <button style="text-align:center;border:1px solid #ced4da;color:#495057;background-color:#fff;" class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    &nbsp;Date&nbsp;&nbsp;
-                  </button>
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <label>Intervalle de date</label>
-                    <input type="date" class="datepicker form-control col-lg-12" name="dateDebut">
-                    <input type="date" class="datepicker form-control col-lg-12" name="dateFin">
-                  </div>
-                </div>
-                <select class="form-control col-sm-12 col-md-3" name="type_annonce">
-                    <option value="all">Toutes les annonces</option>
-                                            <option value="1">Evangélisation</option>
-                                            <option value="2">Information de messe</option>
-                                            <option value="3">Messe particulière</option>
-                                            <option value="4">Pélérinage</option>
-                                            <option value="5">Prière</option>
-                                            <option value="6">Promotion</option>
-                                            <option value="7">Recollection</option>
-                                            <option value="8">Retraite</option>
-                                            <option value="10">serveur serveur</option>
-                                            <option value="9">Veillée de prière</option>
-                                    </select>
-                <select data-placeholder="diocèse" class="form-control col-sm-12 col-md-2" name="region" tabindex="5" >
-                    <option value="">Diocèse</option>
-                                            <optgroup label="Abengourou">
-                            <option value="tout-2">Tout Abengourou</option>
-                                                            <option value="1">Abengourou</option>
-                                                            <option value="48">Abongoua</option>
-                                                            <option value="49">Agnibilekro</option>
-                                                            <option value="50">Arrah</option>
-                                                            <option value="51">Bettie</option>
-                                                            <option value="52">Bongouanou</option>
-                                                            <option value="53">Koun-Fao</option>
-                                                            <option value="54">Niable</option>
-                                                    </optgroup>
-                                            <optgroup label="Abidjan">
-                            <option value="tout-10">Tout Abidjan</option>
-                                                            <option value="2">Abobo</option>
-                                                            <option value="3">Adjame</option>
-                                                            <option value="4">Alepe</option>
-                                                            <option value="5">Anyama</option>
-                                                            <option value="6">Attecoube</option>
-                                                            <option value="7">Attinguie</option>
-                                                            <option value="8">Bingerville</option>
-                                                            <option value="9">Brofodoume</option>
-                                                            <option value="10">Cocody</option>
-                                                            <option value="11">Marcory</option>
-                                                            <option value="12">M&#039;Bonoua</option>
-                                                            <option value="13">Oghlwapo</option>
-                                                            <option value="14">Plateau</option>
-                                                            <option value="15">Treichville</option>
-                                                    </optgroup>
-                                            <optgroup label="Agboville">
-                            <option value="tout-11">Tout Agboville</option>
-                                                            <option value="16">Agboville</option>
-                                                            <option value="17">Adzope</option>
-                                                            <option value="18">Akoupe</option>
-                                                            <option value="19">Agou</option>
-                                                            <option value="20">Tiassale</option>
-                                                            <option value="21">N&#039;Douci</option>
-                                                            <option value="22">Taabo</option>
-                                                            <option value="23">Yakasse Attobrou</option>
-                                                    </optgroup>
-                                            <optgroup label="Bondoukou">
-                            <option value="tout-3">Tout Bondoukou</option>
-                                                            <option value="55">Bondoukou</option>
-                                                            <option value="56">Bouna</option>
-                                                            <option value="57">Doropo</option>
-                                                            <option value="58">Nassian</option>
-                                                            <option value="59">Sandegue</option>
-                                                            <option value="60">Tanda</option>
-                                                            <option value="61">Transua</option>
-                                                    </optgroup>
-                                            <optgroup label="Bouaké">
-                            <option value="tout-14">Tout Bouaké</option>
-                                                            <option value="39">Beoumi</option>
-                                                            <option value="40">Botro</option>
-                                                            <option value="41">Bouaké</option>
-                                                            <option value="42">Daoukro</option>
-                                                            <option value="43">Djebonoua</option>
-                                                            <option value="44">Mbahiakro</option>
-                                                            <option value="45">Ouelle</option>
-                                                            <option value="46">Prikro</option>
-                                                            <option value="47">Sakassou</option>
-                                                            <option value="75">Grand Lahou</option>
-                                                    </optgroup>
-                                            <optgroup label="Daloa">
-                            <option value="tout-6">Tout Daloa</option>
-                                                            <option value="79">Bouafle</option>
-                                                            <option value="80">Daloa</option>
-                                                            <option value="81">Gohitafla</option>
-                                                            <option value="82">Issia</option>
-                                                            <option value="83">Sinfra</option>
-                                                            <option value="84">Vavoua</option>
-                                                            <option value="85">Zoukougbeu</option>
-                                                            <option value="86">Zuenoula</option>
-                                                    </optgroup>
-                                            <optgroup label="Gagnoa">
-                            <option value="tout-5">Tout Gagnoa</option>
-                                                            <option value="72">Bayota</option>
-                                                            <option value="73">Divo</option>
-                                                            <option value="74">Fresco</option>
-                                                            <option value="76">Guitry</option>
-                                                            <option value="77">Lakota</option>
-                                                            <option value="78">Oume</option>
-                                                    </optgroup>
-                                            <optgroup label="Grand-Bassam">
-                            <option value="tout-12">Tout Grand-Bassam</option>
-                                                            <option value="24">Aboisso</option>
-                                                            <option value="25">Adiake</option>
-                                                            <option value="26">Port-Bouet</option>
-                                                            <option value="27">Koumassi</option>
-                                                            <option value="28">Grand-Bassam</option>
-                                                            <option value="29">Bonoua</option>
-                                                            <option value="30">Tiapoum</option>
-                                                    </optgroup>
-                                            <optgroup label="Katiola">
-                            <option value="tout-9">Tout Katiola</option>
-                                                            <option value="96">Dabakala</option>
-                                                            <option value="97">Ferkessedougou</option>
-                                                            <option value="98">Katiola</option>
-                                                            <option value="99">Kong</option>
-                                                            <option value="100">Niakaramadougou</option>
-                                                    </optgroup>
-                                            <optgroup label="Korhogo">
-                            <option value="tout-8">Tout Korhogo</option>
-                                                            <option value="92">Dikodougou</option>
-                                                            <option value="93">Tingrela</option>
-                                                            <option value="94">Korhogo</option>
-                                                            <option value="95">sinematiali</option>
-                                                    </optgroup>
-                                            <optgroup label="Odiénné">
-                            <option value="tout-15">Tout Odiénné</option>
-                                                            <option value="101">Kani</option>
-                                                            <option value="102">Koro</option>
-                                                            <option value="103">Mankono</option>
-                                                            <option value="104">Odiénné</option>
-                                                            <option value="105">Seguéla</option>
-                                                            <option value="106">Touba</option>
-                                                    </optgroup>
-                                            <optgroup label="San-Pedro">
-                            <option value="tout-7">Tout San-Pedro</option>
-                                                            <option value="87">Gueyo</option>
-                                                            <option value="88">San-Pedro</option>
-                                                            <option value="89">Sassandra</option>
-                                                            <option value="90">Soubre</option>
-                                                            <option value="91">Tabou</option>
-                                                    </optgroup>
-                                            <optgroup label="Yamoussoukro">
-                            <option value="tout-4">Tout Yamoussoukro</option>
-                                                            <option value="62">Attiegouakro</option>
-                                                            <option value="63">Bocanda</option>
-                                                            <option value="64">Didievi</option>
-                                                            <option value="65">Dimbokro</option>
-                                                            <option value="66">Kossou</option>
-                                                            <option value="67">Kouassi Kouassikro</option>
-                                                            <option value="68">Mbato</option>
-                                                            <option value="69">Tiebissou</option>
-                                                            <option value="70">Toumodi</option>
-                                                            <option value="71">Yamoussoukro</option>
-                                                    </optgroup>
-                                            <optgroup label="Yopougon">
-                            <option value="tout-13">Tout Yopougon</option>
-                                                            <option value="31">Adiapodoume</option>
-                                                            <option value="32">Becedi-Brignan</option>
-                                                            <option value="33">Dabou</option>
-                                                            <option value="34">Jacqueville</option>
-                                                            <option value="35">Sikensi</option>
-                                                            <option value="36">Songon</option>
-                                                            <option value="37">Toupah</option>
-                                                            <option value="38">Yopougon</option>
-                                                    </optgroup>
-                                    </select>
-                <div class="col-lg-1 col-sm-12">
-                    <button style="padding-left:35px; padding-right:42px;" type="submit" class="btn btn-primary btn-block"><i class="fa fa-search"></i></button>
-                </div>
-            </form>
-            <br>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-
-                <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul class="navbar-nav">
-                                                    <li class="nav-item">
-                                <a class="nav-link" href="https://fortifietoi.ci/categorie/evangelisation">Evangélisation</a>
-                            </li>
-                                                    <li class="nav-item">
-                                <a class="nav-link" href="https://fortifietoi.ci/categorie/information-de-messe">Information de messe</a>
-                            </li>
-                                                    <li class="nav-item">
-                                <a class="nav-link" href="https://fortifietoi.ci/categorie/messe-particuliere">Messe particulière</a>
-                            </li>
-                                                    <li class="nav-item">
-                                <a class="nav-link" href="https://fortifietoi.ci/categorie/pelerinage">Pélérinage</a>
-                            </li>
-                                                    <li class="nav-item">
-                                <a class="nav-link" href="https://fortifietoi.ci/categorie/priere">Prière</a>
-                            </li>
-                                                    <li class="nav-item">
-                                <a class="nav-link" href="https://fortifietoi.ci/categorie/promotion">Promotion</a>
-                            </li>
-                                                    <li class="nav-item">
-                                <a class="nav-link" href="https://fortifietoi.ci/categorie/recollection">Recollection</a>
-                            </li>
-                                                    <li class="nav-item">
-                                <a class="nav-link" href="https://fortifietoi.ci/categorie/retraite">Retraite</a>
-                            </li>
-                                                    <li class="nav-item">
-                                <a class="nav-link" href="https://fortifietoi.ci/categorie/serveur-serveur">serveur serveur</a>
-                            </li>
-                                                    <li class="nav-item">
-                                <a class="nav-link" href="https://fortifietoi.ci/categorie/veillee-de-priere">Veillée de prière</a>
-                            </li>
-                                            </ul>
-                </div>
-            </nav>
-        </div>
-    </section>
-
-      <div class="album py-5 bg-light">
-        <div class="container">
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="https://fortifietoi.ci">Accueil</a></li>
-                    <li class="breadcrumb-item active" aria-current="page"> Mon compte | Mes annonces</li>
-                </ol>
-            </nav>
-
-            <nav style="padding-left:0; padding-right: 0;" class="navbar navbar-light bg-light justify-content-between">
-                <a class="navbar-brand">Mes annonces</a>
-                <div>
-                    <a href="https://fortifietoi.ci/utilisateur">Mon profil</a> |
-                    <a class="btn btn-sm btn-danger" href="https://fortifietoi.ci/deconnexion"
-                       onclick="event.preventDefault();
-                    document.getElementById('logout-form').submit();">
-                        Déconnexion
-                    </a>
-                </div>
-            </nav>
-            <div class="row">
-                <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    </div>
-                </nav>
-                <div class="col-9 offset-2">
-                    <div class="clearfix"></div>
-                    
-                                        <div class="clearfix"></div>
-                </div>
-                <!-- left-bar -->
-                <div class="col-md-12">
-                    <div class="row">
-                        <div class="col-3"><h6>Détails des annonces</h6></div>
-                        <div class="col-6">
-                            <a href="https://fortifietoi.ci/utilisateur/annonces/actives" class="btn btn-light">Annonces actives (0 )</a> |
-                            <a href="https://fortifietoi.ci/utilisateur/annonces/inactives" class="btn btn-light">Annonces inactives (0)</a>
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-8"><h2>Customer <b>Details</b></h2></div>
+                    <div class="col-sm-4">
+                        <div class="search-box">
+                            <i class="material-icons">&#xE8B6;</i>
+                            <input type="text" class="form-control" placeholder="Search&hellip;">
                         </div>
                     </div>
-
-                    <table id="example" class="table table-striped table-bordered" style="width:100%">
-                        <thead>
-                        <tr>
-                            <th>Thème</th>
-                            <th>Date</th>
-                            <th>Heure</th>
-                            <th>Image</th>
-                            <th>Actions</th>
-                            <th></th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        </tbody>
-                    </table>
                 </div>
-                <!-- sidebar -->
+            </div>
+            <table class="table table-striped table-hover table-bordered">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name <i class="fa fa-sort"></i></th>
+                        <th>Address</th>
+                        <th>City <i class="fa fa-sort"></i></th>
+                        <th>Pin Code</th>
+                        <th>Country <i class="fa fa-sort"></i></th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Thomas Hardy</td>
+                        <td>89 Chiaroscuro Rd.</td>
+                        <td>Portland</td>
+                        <td>97219</td>
+                        <td>USA</td>
+                        <td>
+              <a href="#" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
+                            <a href="#" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                            <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Maria Anders</td>
+                        <td>Obere Str. 57</td>
+                        <td>Berlin</td>
+                        <td>12209</td>
+                        <td>Germany</td>
+                        <td>
+              <a href="#" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
+                            <a href="#" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                            <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Fran Wilson</td>
+                        <td>C/ Araquil, 67</td>
+                        <td>Madrid</td>
+                        <td>28023</td>
+                        <td>Spain</td>
+                        <td>
+              <a href="#" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
+                            <a href="#" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                            <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Dominique Perrier</td>
+                        <td>25, rue Lauriston</td>
+                        <td>Paris</td>
+                        <td>75016</td>
+                        <td>France</td>
+                        <td>
+              <a href="#" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
+                            <a href="#" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                            <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Martin Blank</td>
+                        <td>Via Monte Bianco 34</td>
+                        <td>Turin</td>
+                        <td>10100</td>
+                        <td>Italy</td>
+                        <td>
+              <a href="#" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
+                            <a href="#" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                            <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                        </td>
+                    </tr>        
+                </tbody>
+            </table>
+            <div class="clearfix">
+                <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
+                <ul class="pagination">
+                    <li class="page-item disabled"><a href="#"><i class="fa fa-angle-double-left"></i></a></li>
+                    <li class="page-item"><a href="#" class="page-link">1</a></li>
+                    <li class="page-item"><a href="#" class="page-link">2</a></li>
+                    <li class="page-item active"><a href="#" class="page-link">3</a></li>
+                    <li class="page-item"><a href="#" class="page-link">4</a></li>
+                    <li class="page-item"><a href="#" class="page-link">5</a></li>
+                    <li class="page-item"><a href="#" class="page-link"><i class="fa fa-angle-double-right"></i></a></li>
+                </ul>
             </div>
         </div>
-    </div>
-
-    
-
-</main>
-
-<footer class="page-footer font-small">
-  <!--Footer Links-->
-  <div class="container text-center text-md-left">
-    <!-- Footer links -->
-    <div class="row text-center text-md-left mt-3 pb-3">
-      <!--First column-->
-      <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-        <h6 class="text-uppercase mb-4 font-weight-bold">A propos de FORTIFIE-TOI</h6>
-        <p><a target="_blank" href="https://aide.fortifietoi.ci/a-propos-de-nous/quest-ce-que-fortifie-toi">A propos de nous</a></p>
-        <p><a target="_blank" href="https://aide.fortifietoi.ci/information/avantages-de-promouvoir-une-annonce">Avantage de l'inscription</a></p>
-        <p>
-          <button style="width: 80%;" type="button" class="btn btn-primary col-sm-12" data-toggle="modal" data-target="#exampleModal">
-              Ecrivez-nous
-          </button>
-        </p>
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Ecrivez-nous</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <form method="post" action="https://fortifietoi.ci/contact" class="form-horizontal">
-                  <input type="hidden" name="_token" value="VaF5gohXgLnAonixeuZk69RUzW1OKGoGicwIWjBc">
-                  <label>Nom & prenoms</label>
-                  <div class="form-group">
-                    <input type="text" name="nom" class="form-control" placeholder="Entrez vos nom et prénoms ici">
-                  </div>
-
-                  <label>Email <em style="color:red;">*</em></label>
-                  <div class="form-group">
-                    <input type="text" required name="email" class="form-control" placeholder="Entrez votre E-mail ici">
-                  </div>
-
-                  <label>Objet</label>
-                  <div class="form-group">
-                    <input type="text" name="objet" class="form-control" placeholder="Entrez l'objet ici">
-                  </div>
-                  <label>Message <em style="color:red;">*</em></label>
-                  <div class="form-group">
-                    <textarea required name="message" class="form-control" placeholder="Entrez votre message ici"></textarea>
-                  </div>
-                  <button type="submit" class="btn btn-primary"> <i class="fa fa-envelope"></i> Envoyer</button>
-                </form>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Fermer</button>
-                
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!--/.First column-->
-      <hr class="w-100 clearfix d-md-none">
-
-      <hr class="w-100 clearfix d-md-none">
-      <!--Second column-->
-      <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-        <h6 class="text-uppercase mb-4 font-weight-bold">RENSEIGNEMENTS</h6>
-        <p><a target="_blank" href="https://aide.fortifietoi.ci/politique/conditions-dutilisation">Conditions d'utilisation</a></p>
-        <p><a target="_blank" href="https://aide.fortifietoi.ci/politique/politique-de-confidentialite">Politique de confidentialité</a></p>
-        <p><a target="_blank" href="https://aide.fortifietoi.ci/politique/regles-daffichage">Règles d'affichage</a></p>
-      </div>
-      <!--/.Second column-->
-      <hr class="w-100 clearfix d-md-none">
-      <!--Third column-->
-      <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-        <h6 class="text-uppercase mb-4 font-weight-bold">LIENS UTILES</h6>
-        <!-- <p><a href="#">Conférence episcopale de CI</a></p> -->
-                  <p><a href="#">Conférence épiscopale de CI</a></p>
-              </div>
-      <!--/.Third column-->
-      <hr class="w-100 clearfix d-md-none">
-      <!--Third column-->
-      <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-        <h6 class="text-uppercase mb-4 font-weight-bold">SOUTIEN</h6>
-        <p><a target="_blank" href="https://aide.fortifietoi.ci">Centre d'aide</a></p>
-      </div>
-      <!--/.Third column-->
-    </div>
-    <!-- Footer links -->
-    <hr>
-    <div class="row py-3 d-flex align-items-center">
-      <!--Grid column-->
-      <div class="col-md-8 col-lg-8">
-        <!--Copyright-->
-        <p class="text-center text-md-left grey-text">©
-           
-                2018 - 2019 
-             
-            Copyright: Fortifie-toi
-        </p>
-        <!--/.Copyright-->
-      </div>
-      <!--Grid column-->
-      <!--Grid column-->
-      <div class="col-md-4 col-lg-4 ml-lg-0">
-        <!--Social buttons-->
-        <!-- <div class="text-center text-md-right">
-          <ul class="list-unstyled list-inline">
-            <li class="list-inline-item"><a class="btn-floating btn-sm rgba-whte-slight mx-1"><i class="fab fa-2x fa-facebook"></i></a></li>
-            <li class="list-inline-item"><a class="btn-floating btn-sm rgba-white-slight mx-1"><i class="fab fa-2x fa-twitter"></i></a></li>
-            <li class="list-inline-item"><a class="btn-floating btn-sm rgba-white-slight mx-1"><i class="fab fa-2x fa-google-plus"></i></a></li>
-            <li class="list-inline-item"><a class="btn-floating btn-sm rgba-white-slight mx-1"><i class="fab fa-2x fa-linkedin"></i></a></li>
-          </ul>
-        </div> -->
-        <!--/.Social buttons-->
-      </div>
-      <!--Grid column-->
-    </div>
-  </div>
-</footer>
-<!--/.Footer-->
-
-<!-- Bootstrap core JavaScript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<!-- <script>window.jQuery || document.write('<script src="bootstrap/assets/js/vendor/jquery-slim.min.js"><\/script>')</script> -->
-<link media="all" type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker.css">
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js"></script>
-
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
-
-<link media="all" type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css">
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
-
-
-<!-- select2 pour autocomplete -->
-<link media="all" type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css">
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
-
-
-<script src="https://fortifietoi.ci/assets/core/bootstrap/assets/js/vendor/popper.min.js"></script>
-
-<script src="https://fortifietoi.ci/assets/core/bootstrap/dist/js/bootstrap.min.js"></script>
-
-<script src="https://fortifietoi.ci/assets/core/bootstrap/assets/js/vendor/holder.min.js"></script>
-
-
-<!-- impression depuis la page des details -->
-<script src="https://fortifietoi.ci/assets/core/printArea/jquery.PrintArea.js"></script>
-
-<script src="https://fortifietoi.ci/assets/core/printArea/printArea.js"></script>
-
-<script>
-    $(document).ready(function(){
-        $("#printButton").click(function(){
-            var mode = 'iframe'; //popup
-            var close = mode == "popup";
-            var options = { mode : mode, popClose : close};
-            $("div.printableArea").printArea( options );
-        });
-    });
-    $(document).ready(function(){
-        // Collapse accordion every time dropdown is shown
-        $('.dropdown-accordion').on('show.bs.dropdown', function (event) {
-        var accordion = $(this).find($(this).data('accordion'));
-        accordion.find('.panel-collapse.in').collapse('hide');
-        });
-
-        // Prevent dropdown to be closed when we click on an accordion link
-        $('.dropdown-accordion').on('click', 'a[data-toggle="collapse"]', function (event) {
-        event.preventDefault();
-        event.stopPropagation();
-        $($(this).data('parent')).find('.panel-collapse.in').collapse('hide');
-        $($(this).attr('href')).collapse('show');
-        });
-    });
-</script>
-
-<!-- scroll to the top page -->
-<script>
-  // When the user scrolls down 20px from the top of the document, show the button
-  window.onscroll = function() {scrollFunction()};
-
-  function scrollFunction() {
-      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-          document.getElementById("myBtn").style.display = "block";
-      } else {
-          document.getElementById("myBtn").style.display = "none";
-      }
-  }
-
-  // When the user clicks on the button, scroll to the top of the document
-  function topFunction() {
-      document.body.scrollTop = 0;
-      document.documentElement.scrollTop = 0;
-  }
-</script>
-
-
-<script src="https://fortifietoi.ci/assets/core/js/jquery.dataTables.min.js"></script>
-
-<script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
-
-<script>
-    $(document).ready(function() {
-        $('#example').DataTable();
-    });
-</script>
-<script src="https://fortifietoi.ci/js/share.js"></script>
-<script>
-    $(document).ready(function() {
-        $(".fortifietation > ul.pagination > li > a").addClass("page-link");
-        $(".fortifietation > ul.pagination > li.active").addClass("page-link btn btn-primary");
-        $(".fortifietation > ul.pagination > li.disabled").addClass("page-link");
-    });
-</script>
-
-<script src="https://fortifietoi.ci/assets/core/plugins/dropify/dist/js/dropify.min.js"></script>
-
-
-
-<script src="https://fortifietoi.ci/assets/core/OwlCarousel/dist/owl.carousel.min.js"></script>
-
-<script>
-    $(document).ready(function(){
-        var owl = $('.owl-carousel');
-        owl.owlCarousel({
-            items:4,
-            loop:true,
-            margin:10,
-            autoplay:true,
-            autoplayTimeout:5000,
-            autoplayHoverPause:true
-        });
-        $('.play').on('click',function(){
-            owl.trigger('play.owl.autoplay',[1000])
-        })
-        $('.stop').on('click',function(){
-            owl.trigger('stop.owl.autoplay')
-        });
-
-    });
-</script>
-
-
-<script>
-    $(function () {
-        $('span').click(function () {
-            var x = $(this).attr('dir');
-            var y = $(this).attr('itemprop');
-            $('.'+x).hide();
-            $('.'+y).show();
-
-        });
-    });
-</script>
-
-<!-- ajax -->
-<script type="text/javascript">
-    $('.date').datepicker({
-        format: 'yyyy-mm-dd'
-        // format: 'mm-dd-yyyy'
-    });
-
-    $('.timepicker').datetimepicker({
-        format: 'HH:mm:ss'
-    });
-</script>
-
-<script type="text/javascript">
-    $.ajaxSetup({
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        }
-    });
-
-    $('.diocese').select2({
-        placeholder: 'Sélectionnez le diocèse rattaché',
-        ajax: {
-            url: 'https://fortifietoi.ci/diocese-ajax-loader',
-            dataType: 'json',
-            delay: 250,
-            processResults: function (data) {
-                return {
-                    results:  $.map(data, function (item) {
-                        return {
-                            text: item.libelle,
-                            id: item.id
-                        }
-                    })
-                };
-            },
-            cache: true
-        }
-    });
-    /**
-     *ajout de nouvelle ville non listée
-     */
-    $('.region').select2({
-        placeholder: 'Sélectionnez votre région',
-        ajax: {
-            url: 'https://fortifietoi.ci/region-ajax-loader',
-            dataType: 'json',
-            delay: 250,
-            processResults: function (data) {
-                return {
-                    results:  $.map(data, function (item) {
-                        return {
-                            text: item.libelle,
-                            id: item.id
-                        }
-                    })
-                };
-            },
-            cache: true
-        }
-    });
-
-
-    $('.ajaxList').change(function(event){
-        var select = $(this);
-        var id = '#'+select.data('target');
-        $.get(select.data('url'), {id:select.val()}, function(data){
-            if(data.error){
-                alert(data.error);
-            }
-            else{
-                $(id).parents('.form-group').show();
-                var target = $(id).get(0);
-                target.options.length = 0;
-                for(var i in data.results){
-                    var result = data.results[i];
-                    target.options[i] = new Option(result.libelle, result.id, false, false);
-                }
-            }
-        },'json');
-        //console.log(select.data('url'));
-    }).each(function(){
-        var select = $(this);
-        var target = $('#'+select.data('target'));
-        target.parents('.form-group').hide();
-    });
-
-
-    $('.ajaxParoisse').change(function(event){
-        var select = $(this);
-        var id = '#'+select.data('target');
-        $.get(select.data('url'), {id:select.val()}, function(data){
-            if(data.error){
-                alert(data.error);
-            }
-            else{
-                $(id).parents('.form-group').show();
-                var target = $(id).get(0);
-                target.options.length = 0;
-                for(var i in data.results){
-                    var result = data.results[i];
-                    target.options[i] = new Option(result.libelle, result.id, false, false);
-                }
-            }
-        },'json');
-        //console.log(select.data('url'));
-    }).each(function(){
-        var select = $(this);
-        var target = $('#'+select.data('target'));
-        target.parents('.form-group').hide();
-    });
-
-    /**verifier email et url
-    */
-    $('#youtube').blur(function(){
-      $.ajax({
-        type: 'GET',
-        url: 'https://fortifietoi.ci/pregmatch',
-        success: function(data){
-          console.log('success', data);
-        }
-      });
-      
-    });
-
-
-
-/** script pour denoncer une annonce */
-</script>
-
-<script>
-  $(document).ready(function(){
-      
-      // On cache la zone de texte
-      jQuery('#toggle').hide();
-      // toggle() lorsque le lien avec l'ID #toggler est cliqué
-      jQuery('a#toggler').click(function()
-      {
-          jQuery('#toggle').toggle(400);
-          return false;
-      });
-
-  });
-</script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
-<script>
-    $(document).ready(function(){
-        $('#categories').select2({
-            placeholder : 'Sélectionnez la catégorie',
-            tags: true
-        });
-        $('#communes').select2({
-            placeholder : 'Selectionnez les localités',
-            tags: true
-        });
-    });
-</script>
 </body>
-</html>
+</html>                                                               
