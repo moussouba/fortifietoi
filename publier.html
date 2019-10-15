@@ -143,7 +143,7 @@
                                             <div class="form-group">
                                                 <center><a href="https://fortifietoi.ci/annonce/particuliere">Votre annonce n'a pas de thème? </a></center>
                                             </div>
-                                            <button class="btn nextBtn pull-right stepp" type="button">Next</button>
+                                            <button class="btn nextBtn pull-right stepp mt-3" type="button">Next</button>
                                         </div>
                                     </div>
                                     
@@ -178,7 +178,7 @@
                                                             </div>
                                                         </div>
                                                         </div>
-                                            <button class="btn stepp nextBtn pull-right" type="button">Next</button>
+                                            <button class="btn stepp nextBtn pull-right mt-3" type="button">Next</button>
                                         </div>
                                     </div>
                                     
@@ -268,10 +268,6 @@
                                                             </div>
                                                             
                                                         </div>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="">Thème </label>
-                                                        <input type="text" class="form-control" id="theme" readonly name="libelle" value="theme">
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="">Description </label>
@@ -396,56 +392,17 @@
                                                 <div class="card-body">
                                                     <h6>2- Médias <em style="color:red;">*</em> </h6>
                                                     <hr>
-                                                    <p>Inclure au moins 5 photos de 300px et au plus de 1000px de haut ou de large en commençant par le premier emplacement.
-                                                        <br> Glissez et déposez vos photos pour modifier l'ordre d'affichage. </p>
+                                                    <p>Inclure une image de 300px et au plus de 1000px de haut ou de large.
+                                                        <br> Cette image devra accompagner votre annonce afin d'avoir plus de précision sur cette annonce. </p>
                                                     <div class="form-group">
 
                                                         <div class="container">
                                                             <div class="row">
-                                                                <div class="col-lg-4 col-sm-12">
+                                                                <div class="col-lg-12 col-sm-12">
                                                                     <div class="card">
                                                                         <div class="card-body">
                                                                             <div class="white-box">
                                                                                 <input required type="file" id="input-file-now1" name="premiere" class="files dropify">
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-lg-4 col-sm-12">
-                                                                    <div class="card">
-                                                                        <div class="card-body">
-                                                                            <div class="white-box">
-                                                                                <input type="file" id="input-file-now2" name="seconde" class="dropify">
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-lg-4 col-sm-12">
-                                                                    <div class="card">
-                                                                        <div class="card-body">
-                                                                            <div class="white-box">
-                                                                                <input type="file" id="input-file-now3" name="troisieme" class="dropify">
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <br>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col-lg-4 col-sm-12">
-                                                                    <div class="card">
-                                                                        <div class="card-body">
-                                                                            <div class="white-box">
-                                                                                <input type="file" id="input-file-now4" name="quatrieme" class="dropify">
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-lg-4 col-sm-12">
-                                                                    <div class="card">
-                                                                        <div class="card-body">
-                                                                            <div class="white-box">
-                                                                                <input type="file" id="input-file-now5" name="cinquieme" class="dropify">
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -485,25 +442,108 @@
                                                 </div>
                                             </div>
 
-                                            <button class="btn stepp nextBtn pull-right" type="button">Prévisualiser</button>
+                                            <button class="btn stepp nextBtn pull-right mt-3" type="button">next</button>
                                         </div>
                                     </div>
                                     
                                     <div class="panel panel-primary setup-content" id="step-4">
                                         <div class="panel-heading">
-                                             <h3 class="panel-title">Cargo</h3>
+                                             <h3 class="panel-title">Resumé</h3>
                                         </div>
                                         <div class="panel-body">
-                                            <div class="form-group">
-                                                <label class="control-label">Company Name</label>
-                                                <input maxlength="200" type="text" required="required" class="form-control" placeholder="Enter Company Name" />
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <h6> 1- Détails de l'annonce</h6><hr>
+                                                    <div class="form-group">
+                                                        <label for="">Thème </label>
+                                                        <input type="text" class="form-control" id="theme" name="libelle" value="theme" disabled>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="">Catégorie </label>
+                                                        <input type="text" class="form-control" id="theme" name="libelle" value="évengelisation" disabled>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="row">
+                                                            <div class="col-lg-3 col-sm-6">
+                                                                <label for="">Date début</label>
+                                                                <h5 href="#"> <i class="lnr lnr-calendar-full"></i> 12-01-2018</h5>
+                                                            </div>
+
+                                                            <div class="col-lg-3 col-sm-6">
+                                                                <label for="">Heure début</label>
+                                                                <h5 href="#"> <i class="lnr lnr-clock"></i> 08:10</h5>
+                                                            </div>
+                                                            <div class="col-lg-3 col-sm-6">
+                                                                <label for="">Date Fin</label>
+                                                                <h5 href="#"> <i class="lnr lnr-calendar-full"></i> 12-01-2019</h5>
+                                                            </div>
+                                                            <div class="col-lg-2 col-sm-6">
+                                                                <label for="">Heure fin </label>
+                                                                <h5 href="#"> <i class="lnr lnr-clock"></i> 18:10</h5>
+                                                            </div>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="">Description </label>
+                                                        <textarea rows="4" id="desc" class="form-control" name="description" placeholder="Description" disabled>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                                        tempor incididunt ut labore et dolore magna.</textarea>
+                                                        
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="">Ville </label>
+                                                        <input type="text" class="form-control" id="theme" name="libelle" value="Abidjan" disabled>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <h6>2- Médias <em style="color:red;">*</em> </h6>
+                                                    <hr>
+                                                    <p>Votre image qui sera affiché en entète de votre annonce afin de donner un appercu sur votre annonce.</p>
+                                                    <div class="form-group">
+
+                                                        <div class="container">
+                                                            <div class="row">
+                                                                <div class="col-lg-12 col-sm-12">
+                                                                    <img src="image/blog/post4.jpg" alt="post">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label for="">Url de la video Youtube </label>
+                                                        <input type="text" class="form-control" id="theme" name="libelle" value="https://www.youtube.com/watch?v=mJQBrHMUOfs" disabled>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div style="margin-bottom:5px;" class="custom-control custom-checkbox">
+                                                            <input type="checkbox" class="custom-control-input" id="customCheckSiteWeb">
+                                                            <label class="custom-control-label" for="customCheckSiteWeb"> URL du site Web</label>
+                                                        </div>
+                                                        <input type="text" class="form-control" id="theme" name="libelle" value="https://www.monsite.ci" disabled>
+                                                         
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <h6>3- Coordonnées (Ces informations seront affichées sur l'annonce)</h6><hr>
+                                                    <div class="form-group">
+                                                        <label for="">Numéro de téléphone</label>
+                                                        <input type="text" class="form-control" id="theme" name="libelle" value="+225 77 83 29 82" disabled>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="">Adresse email de l'annonce</label>
+                                                        <input type="email" class="form-control" id="theme" name="libelle" value="sande@gmail.com" disabled>
+                                                    </div>
+                                                        
+                                                </div>
                                             </div>
                                             <div class="form-group">
-                                                <label class="control-label">Company Address</label>
-                                                <input maxlength="200" type="text" required="required" class="form-control" placeholder="Enter Company Address" />
-                                            </div>
-                                            <div class="form-group">
-                                                <button class="btn stepp pull-right" type="submit">Finish!</button>
+                                                <button class="btn stepp pull-right mt-3" type="submit">Finish!</button>
                                             </div>
                                         </div>
                                     </div>
